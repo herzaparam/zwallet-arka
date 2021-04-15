@@ -3,7 +3,7 @@ import styles from '../../styles/Login.module.css'
 import Button from '../../src/components/base/button'
 import Input from '../../src/components/base/input'
 
-function Login() {
+function ResetPass() {
     return (
         <div className="row">
             <div className="col-7">
@@ -18,17 +18,14 @@ function Login() {
             </div>
             <div className="col-5">
                 <div className={[["container"],styles["cont-side-right"]].join(' ')}>
-                    <h3 className={styles["heading-black"]}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
-                    <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
-                    <Input label="" nameInput="email" type="text" placeholder="Enter your e-mail"/>
+                    <h3 className={styles["heading-black"]}>Did You Forgot Your Password? Don’t Worry, You Can Reset Your Password In a Minutes.</h3>
+                    <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
                     <Input label="" nameInput="password" type="password"placeholder="Enter you password"/>
-                    <p className={styles["forg-pass"]}>Forgot Password?</p>
                     <Button styling="grey" title="Login" />
-                    <p className={styles["create-acc"]}>Dont't have an account? Let's <a href="">Sign up</a></p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default ResetPass

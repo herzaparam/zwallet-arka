@@ -1,0 +1,13 @@
+.graph{
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 1.5em 1em;
+    height: 100%;
+}
+.graph-top{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  
+}

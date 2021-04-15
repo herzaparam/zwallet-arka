@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Landing.module.css'
 import Button from '../src/components/base/button'
 import CardAbout from '../src/components/module/CardAbout'
 import Image from 'next/image'
@@ -11,8 +11,6 @@ export default function Home() {
         <title>Zwallet</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@1&display=swap" rel="stylesheet"></link>
       </Head>
 
       <img src="/Mask Group.png" alt="" srcSet="" />

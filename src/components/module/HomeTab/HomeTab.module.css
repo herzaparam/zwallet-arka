@@ -1,0 +1,25 @@
+.home-tab{
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
+.home-tab > button{
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 31px;
+    color: #6379F4;
+    align-self: flex-start;
+    border-radius: 25px;
+    
+    padding: .9em 1.5em;
+}
+.home-tab img{
+    margin-right: 1em;
+}
+.btn-tabs-home{
+    margin-top: auto;
+}
