@@ -1,0 +1,31 @@
+.jumbo-tron{
+    background-image: url("/mask Group2.png");
+    height: 130vh;
+}
+.cont-jumbo{
+    padding: 0 10em;
+}
+.cont-jumbo > img{
+    width: 30rem;
+    height: 33rem;
+    object-fit: contain;
+}
+.cont-jumbo > p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+}
+.heading-white{
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: bold;
+    color: white;
+}
+.heading-black{
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: bold;
+    color: #3A3D42;
+}
