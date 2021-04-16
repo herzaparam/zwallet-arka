@@ -1,3 +1,30 @@
+.nav-bar{
+    padding: 1rem 8rem;
+}
+.logo-nav{
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 40px;
+    color: #6379F4;
+}
+.profile-nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.profile-sect{
+    padding: 0 1rem;
+}
+.profile-sect > h5{
+    margin-bottom: 0 ;
+}
+.profile-sect > p{
+    margin-bottom: 0 ;
+}
+.profile-nav > img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 .blue{
     background-color: #6379F4; 
     color: #FFFFFF;
@@ -22,16 +49,8 @@
     padding: 10px 30px;
     margin: 0 1em;
 }
-.grey{
-    background-color: #DADADA;
-    color: #88888F;    
-    border-radius: 12px;
-    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
-    font-size: 18px;
-    line-height: 25px;
-    font-weight: bold;
-    padding: 5px;
-    width: 100%;
-    border: none;
-    height: 52px;
+.pro-bell > img{
+    width: 30px;
+    height: 40px;
+    object-fit: contain;
 }

@@ -1,25 +1,19 @@
-import Head from 'next/head'
 import styles from '../styles/Landing.module.css'
 import Button from '../src/components/base/button'
 import CardAbout from '../src/components/module/CardAbout'
-import Image from 'next/image'
+import Navbar from '../src/components/module/Navbar'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Zwallet</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
+      <Navbar />
       <img src="/Mask Group.png" alt="" srcSet="" />
       <main className="container">
         <div className="row">
           <div className={[["col-6"], styles["side-left"]].join(' ')}>
             <h1>Awesome App<br /> for For Saving <span className={styles["blue-text"]}>Time</span></h1>
             <p>We bring you a mobile app for banking problems that<br /> oftenly wasting much of your times.</p>
-            <Button styling="blue" title="Try It Free" />
+            <Button className="blue" title="Try It Free" />
           </div>
           <div className={[["col-6"], styles["side-right"]].join(' ')}>
             <img src="/png-phone.png" alt="" srcSet="" />

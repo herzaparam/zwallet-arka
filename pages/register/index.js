@@ -7,31 +7,38 @@ import Input from '../../src/components/base/input'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-function Login() {
+function SignUp() {
     const router = useRouter();
+
     const [data, setData] = useState({
+        username: "",
         email: "",
         password: ""
     });
-    const handleChange = (e) => {
+
+    const handleChange = (event) => {
         const dataNew = { ...data };
-        dataNew[e.target.name] = e.target.value;
-        setData(dataNew)
+        dataNew[event.target.name] = event.target.value;
+        setData(dataNew);
     };
-    const handleLogin = (e) => {
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/v1/users/auth/login', data)
-            .then((res) => {   
+        axios.post('http://localhost:8000/api/v1/users/', data)
+            .then((res) => {
                 Swal.fire(
-                    'Login succed!',
+                    'Register succed!',
                     `${res.data.message}`,
                     'success'
                 )
-                localStorage.setItem("token", res.data.data.token)
-                router.push("/home")
+                router.push("/login")
             })
             .catch((err) => {
-                console.log(err);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
             })
     }
 
@@ -51,12 +58,21 @@ function Login() {
                 <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
                     <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
-                    <form >
+                    <form>
+                        <Input
+                            label=""
+                            name="username"
+                            type="text"
+                            placeholder="Enter your username"
+                            value={data.username}
+                            onChange={handleChange}
+                        />
                         <Input
                             label=""
                             name="email"
                             type="text"
                             placeholder="Enter your e-mail"
+                            value={data.email}
                             onChange={handleChange}
                         />
                         <Input
@@ -64,22 +80,21 @@ function Login() {
                             name="password"
                             type="password"
                             placeholder="Enter you password"
+                            value={data.password}
                             onChange={handleChange}
                         />
-                        <Link href="/reset-pass">
-                            <p className={styles["forg-pass"]}>Forgot Password?</p>
-                        </Link>
                         <Button
                             className="grey"
-                            title="Login"
-                            onClick={handleLogin}
+                            title="Sign Up"
+                            type="submit"
+                            onClick={handleSubmit}
                         />
                     </form>
-                    <p className={styles["create-acc"]}>Dont't have an account? Let's<Link href="/register"><a> Sign up</a></Link></p>
+                    <p className={styles["create-acc"]}>Already have an account? Let's <Link href="/login"><a>Login</a></Link></p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default SignUp

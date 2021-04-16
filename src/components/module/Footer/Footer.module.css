@@ -1,0 +1,23 @@
+.footer-loggedin{
+    margin-top: 2rem;
+    height: 60px;
+    display: flex;
+    background-color: #6379F4;
+    padding: 1rem 8rem;
+}
+.sect-1 > p , .sect-2 > p , .sect-3 > p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(239, 239, 239, 0.9);
+    
+    
+}
+.sect-2-3{
+    display: flex;
+    margin-left: auto;
+}
+.sect-2{
+    margin-right: 2rem;
+}
+

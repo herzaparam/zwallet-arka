@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './input.module.css'
 
-function Input({ label, nameInput, type, placeholder }) {
+function Input({ label, name, type, placeholder, value, onChange }) {
     return (
         <div className={styles["input"]}>
-            <label htmlFor={nameInput}>{label}</label>
-            <input type={type} id={nameInput} name={nameInput} placeholder={placeholder} />
+            <label htmlFor={name}>{label}</label>
+            <input type={type} id={name} name={name} placeholder={placeholder} value={value} onChange={onChange} />
         </div>
     )
 }

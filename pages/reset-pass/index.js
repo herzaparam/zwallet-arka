@@ -17,11 +17,19 @@ function ResetPass() {
                 </div>
             </div>
             <div className="col-5">
-                <div className={[["container"],styles["cont-side-right"]].join(' ')}>
+                <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Did You Forgot Your Password? Don’t Worry, You Can Reset Your Password In a Minutes.</h3>
                     <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
-                    <Input label="" nameInput="password" type="password"placeholder="Enter you password"/>
-                    <Button styling="grey" title="Login" />
+                    <Input
+                        label=""
+                        nameInput="password"
+                        type="password"
+                        placeholder="Enter you password"
+                    />
+                    <Button
+                        className="grey"
+                        title="Confirm"
+                    />
                 </div>
             </div>
         </div>

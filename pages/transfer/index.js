@@ -10,13 +10,13 @@ function Transfer() {
                     <div className="col-3">
                         <HomeTab />
                     </div>
-                    <div className="col-9">
+                    <div className={[["col-9"],styles["main-col"]].join(' ')}>
                         <h5>Search Receiver</h5>
-                        <div class="input-group flex-nowrap">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="addon-wrapping"><img src="/search-bar.png" alt="" /></span>
+                        <div className={styles["input-group"]}>
+                            <div>
+                                <span className={styles["input-span"]}><img src="/search-bar.png" alt=""/></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" />
+                            <input type="text" placeholder="Search receiver here"/>
                         </div>
                         <div className={styles["trans-history"]}>
                             <div className={styles["item1"]}>
