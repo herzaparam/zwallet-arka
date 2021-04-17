@@ -11,10 +11,10 @@ function HomeTab() {
             <Link href="/transfer">
                 <button><img src="/arrow-up.png" alt="" />Transfer</button>
             </Link>
-            <Link href="">
+            <Link href="/top-up">
                 <button><img src="/plus.png" alt="" />Top Up</button>
             </Link>
-            <Link href="">
+            <Link href="/profile">
                 <button><img src="/userlogo.png" alt="" />Profile</button>
             </Link>
             <button className={styles["btn-tabs-home"]}><img src="/log-out.png" alt="" />Log out</button>

@@ -1,6 +1,6 @@
 .cont-fluid{
     background-color: #FAFCFF;
-    height: 80vh;
+    height: 90vh;
     padding: 3em 0;
 }
 .cont-home{
@@ -12,4 +12,41 @@
 .cont-row-graph{
     height: 65%;
 
+}
+.column-topup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    
+}
+
+.topup-card-title > h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #3A3D42;
+}
+.topup-card-content{
+    height: 3rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 2rem;
+}
+.topup-card-content > h4{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 50px; 
+    color: #7A7886;
+}
+.blue{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 50px;
+    color: #6379F4;
+    margin-right: .5rem;
 }

@@ -30,10 +30,21 @@
 .trans-history{
     display: flex;
     margin-top: 2rem;
+    background-color: white;
+    border-radius: 10px;
+}
+.trans-history:hover{
+    cursor: pointer;
+    border: 2px solid #6379F4;
 }
 .item1{
     flex-basis: 5em;
     padding: .5rem;
+}
+.item1 > img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 .item2 {
     padding: .5rem;

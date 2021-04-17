@@ -1,0 +1,83 @@
+.cont-fluid{
+    background-color: #FAFCFF;
+    height: 90vh;
+    padding: 3em 0;
+}
+.cont-home{
+    height: 100%;
+}
+.cont-row-home{
+    height: 100%;
+}
+.cont-row-graph{
+    height: 65%;
+
+}
+.col-profile{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem 0;
+}
+.col-profile > h2{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #4D4B57;
+}
+.col-profile > p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    color: #7A7886;
+}
+.col-profile > img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
+.btn-edit{
+    display: flex;
+}
+.btn-edit > img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    margin-top: 5px;
+}
+.btn-edit > button{
+    border: none;
+    background: none;
+    width: min-content;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #7A7886;
+}
+.card-profile{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    background: #E5E8ED;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 1rem;
+}
+.card-profile > h3 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    color: #4D4B57;
+    margin: auto 0 ;
+}
+.card-profile > img {
+    width: 30px;
+    height: 30px;
+    
+}

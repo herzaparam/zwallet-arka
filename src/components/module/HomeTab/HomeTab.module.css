@@ -11,11 +11,13 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 31px;
-    color: #6379F4;
+    color: rgba(58, 61, 66, 0.8);;
     align-self: flex-start;
     border-radius: 25px;
-    
     padding: .9em 1.5em;
+}
+.home-tab > button:hover{
+    color :#6379F4;
 }
 .home-tab img{
     margin-right: 1em;
