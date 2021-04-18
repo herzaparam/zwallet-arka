@@ -8,6 +8,8 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 function Login() {
+    const api = process.env.URL_API_V1
+
     const router = useRouter();
     const [data, setData] = useState({
         email: "",
@@ -20,7 +22,7 @@ function Login() {
     };
     const handleLogin = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/v1/users/auth/login', data)
+        axios.post(`${api}users/auth/login`, data)
             .then((res) => {   
                 Swal.fire(
                     'Login succed!',

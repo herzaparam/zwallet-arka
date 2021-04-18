@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../../styles/Transfer.module.css'
 import HomeTab from '../../src/components/module/HomeTab'
-import axiosApiInstance from '../../helpers/axios'
 import Link from 'next/link'
+import axios from 'axios'
+import Navbar from '../../src/components/module/Navbar'
+import Footer from '../../src/components/module/Footer'
 
-function Transfer() {
-    const urlImg = 'http://localhost:8000/'
-    
-    const [data, setData] = useState([])
+export default function Transfer({users}) {
+    const urlImage = process.env.URL_API_IMAGE
 
-    useEffect(() => {
-        axiosApiInstance.get(`http://localhost:8000/api/v1/users/find-all?page=1&perPage=5&keyword=`)
-            .then((res) => {
-                const newData = res.data.data;
-                setData(newData)
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }, [])
+    const [text, setText] = useState("")
 
+    const handleChange = (e) =>{
+        const dataNew = { ...text };
+        dataNew[e.target.name] = e.target.value;
+        setText(dataNew)
+    }
+     
     return (
+        <>
+        <Navbar />
         <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
             <div className={[["container"], styles["cont-home"]].join(' ')}>
                 <div className={[["row"], styles["cont-row-home"]].join(' ')}>
@@ -33,18 +32,18 @@ function Transfer() {
                             <div>
                                 <span className={styles["input-span"]}><img src="/search-bar.png" alt="" /></span>
                             </div>
-                            <input type="text" placeholder="Search receiver here" />
+                            <input type="text" placeholder="Search receiver here" name="username" onChange={handleChange}/>
                         </div>
-                        {data.map((item) => {
+                        {users.map((user) => {
                             return (
-                            <Link href={`/transfer/${item.id}`} key={item.id}>
+                            <Link href={`/transfer/${user.id}`} key={user.id}>
                             <div className={styles["trans-history"]} >
                                 <div className={styles["item1"]}>
-                                    <img src={`${urlImg}${item.image}`} alt="" />
+                                    <img src={`${urlImage}${user.image}`} alt="" />
                                 </div>
                                 <div className={styles["item2"]}>
-                                    <h5>{item.username}</h5>
-                                    <p>+{item.phone_number}</p>
+                                    <h5>{user.username}</h5>
+                                    <p>+{user.phone_number}</p>
                                 </div>
                             </div>
                             </Link>
@@ -56,7 +55,19 @@ function Transfer() {
 
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
 
-export default Transfer
+export const getStaticProps = async()=>{
+        const api = process.env.URL_API_V1
+        const res = await axios.get(`${api}users/find-all?page=1&perPage=5&keyword=`)
+        const users = await res.data.data
+       
+    return {
+        props : {
+            users
+        }
+    }
+}

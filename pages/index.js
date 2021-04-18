@@ -11,7 +11,7 @@ export default function Home() {
       <main className="container">
         <div className="row">
           <div className={[["col-6"], styles["side-left"]].join(' ')}>
-            <h1>Awesome App<br /> for For Saving <span className={styles["blue-text"]}>Time</span></h1>
+            <h1>Awesome App <br /> for For Saving <span className={styles["blue-text"]}>Time</span></h1>
             <p>We bring you a mobile app for banking problems that<br /> oftenly wasting much of your times.</p>
             <Button className="blue" title="Try It Free" />
           </div>
@@ -120,3 +120,4 @@ export default function Home() {
     </div>
   )
 }
+

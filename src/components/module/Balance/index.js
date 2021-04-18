@@ -3,11 +3,13 @@ import styles from './Balance.module.css'
 import axiosApiInstances from '../../../../helpers/axios'
 
 function Balance() {
+    
+    const api = process.env.URL_API_V1
     const [user, setUser] = useState([])
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
-            axiosApiInstances.get(`http://localhost:8000/api/v1/users/find-one`)
+            axiosApiInstances.get(`${api}users/find-one`)
                 .then((res) => {
                     const data = res.data.data[0]
                     setUser(data)

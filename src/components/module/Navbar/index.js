@@ -4,17 +4,16 @@ import Link from 'next/link'
 import axiosApiInstances from '../../../../helpers/axios'
 
 function Navbar() {
-    // const urlImage = process.env.ZWALLET_API_IMAGE
-    // const api = process.env.ZWALLET_API_V1
-    const urlImage = 'http://localhost:8000/'
-    
+    const urlImage = process.env.URL_API_IMAGE
+    const api = process.env.URL_API_V1
+
     const [authenticated, setAuthenticated] = useState(null)
     const [user, setUser] = useState([])
 
     useEffect(() => {
         setAuthenticated(localStorage.getItem("token"))
         if (localStorage.getItem('token')) {
-            axiosApiInstances.get(`http://localhost:8000/api/v1/users/find-one`)
+            axiosApiInstances.get(`${api}users/find-one`)
                 .then((res) => {
                     const data = res.data.data[0]
                     setUser(data)
@@ -24,7 +23,7 @@ function Navbar() {
                 })
         }
     }, []);
-    
+
     if (!authenticated) {
         return (
             <nav className={[["navbar"], ["navbar-expand-lg"], ["navbar-light"], styles["nav-bar"]].join(' ')}>

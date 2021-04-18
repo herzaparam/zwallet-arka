@@ -1,7 +1,7 @@
 
 .cont-fluid{
     background-color: #FAFCFF;
-    height: 80vh;
+    min-height: 80vh;
     padding: 3em 0;
 }
 .cont-home{
@@ -88,3 +88,67 @@
     line-height: 23px;
 }
 
+.col-conf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 1rem;
+   
+}
+.trans-confirm-title > h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #3A3D42;
+}
+.trans-confirm-card > img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin-right: 20px;
+    
+}
+.trans-user-conf > h3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #4D4B57;
+}
+.trans-user-conf > p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7886;
+}
+.trans-confirm-card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+}
+.trans-confirm-card > p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7886;
+    margin: auto;
+}
+.trans-confirm-card > h3{
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    color: #514F5B;
+    margin: auto;
+}
+.trans-conf-btn{
+    align-self: flex-end;
+    width: 120px;
+    margin-right: 100px;
+}
+.conf-profile {
+    display: flex;
+}

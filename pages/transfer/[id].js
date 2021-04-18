@@ -1,9 +1,0 @@
-
-
-export default function TransferId() {
-    return (
-        <div>
-            <h1></h1>
-        </div>
-    )
-}

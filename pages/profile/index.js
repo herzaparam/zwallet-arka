@@ -3,6 +3,7 @@ import styles from '../../styles/Profile.module.css'
 import HomeTab from '../../src/components/module/HomeTab'
 import Navbar from '../../src/components/module/Navbar'
 import Footer from '../../src/components/module/Footer'
+import Link from 'next/link'
 
 function Profile() {
     return (
@@ -17,26 +18,31 @@ function Profile() {
                         <div className={[["col-9"], styles["col-profile"]].join(' ')}>
                             <img src="/user.png" alt="" />
                             <div className={styles["btn-edit"]}>
-                            <img src="/pencillogo.png" alt=""/>
-                            <button>edit</button>
+                                <img src="/pencillogo.png" alt="" />
+                                <button>edit</button>
                             </div>
                             <h2>Rober chandler</h2>
                             <p>+9018209381</p>
-                            <div className={styles["card-profile"]}>
-                                <h3>Personal Information</h3>
-                                <img src="/arrow-left.png" alt="" />
-                            </div>
-                            <div className={styles["card-profile"]}>
-                                <h3>Change Password</h3>
-                                <img src="/arrow-left.png" alt="" />
-                            </div>
-                            <div className={styles["card-profile"]}>
-                                <h3>Change PIN</h3>
-                                <img src="/arrow-left.png" alt="" />
-                            </div>
+                            <Link href="/profile/personal-info">
+                                <div className={styles["card-profile"]}>
+                                    <h3>Personal Information</h3>
+                                    <img src="/arrow-left.png" alt="" />
+                                </div>
+                            </Link>
+                            <Link href="/profile/change-pass">
+                                <div className={styles["card-profile"]}>
+                                    <h3>Change Password</h3>
+                                    <img src="/arrow-left.png" alt="" />
+                                </div>
+                            </Link>
+                            <Link href="/profile/change-pin">
+                                <div className={styles["card-profile"]}>
+                                    <h3>Change PIN</h3>
+                                    <img src="/arrow-left.png" alt="" />
+                                </div>
+                            </Link>
                             <div className={styles["card-profile"]}>
                                 <h3>Log out</h3>
-                                
                             </div>
                         </div>
                     </div>
