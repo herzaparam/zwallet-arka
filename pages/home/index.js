@@ -7,6 +7,7 @@ import History from '../../src/components/module/HistoryHome'
 import Navbar from '../../src/components/module/Navbar'
 import Footer from '../../src/components/module/Footer'
 
+
 function Home() {
     return (
         <>

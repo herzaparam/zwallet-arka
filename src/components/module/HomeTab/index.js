@@ -1,8 +1,17 @@
-import React from 'react'
+import {useState} from 'react'
 import Link from 'next/link'
 import styles from './HomeTab.module.css'
+import {useRouter} from 'next/router'
 
 function HomeTab() {
+    const router = useRouter();
+    console.log();
+    const handleLogout = (e) =>{
+        e.preventDefault();
+        localStorage.removeItem('token');
+        router.push("/")
+    }
+
     return (
         <div className={styles["home-tab"]}>
             <Link href="/home">
@@ -17,7 +26,7 @@ function HomeTab() {
             <Link href="/profile">
                 <button><img src="/userlogo.png" alt="" />Profile</button>
             </Link>
-            <button className={styles["btn-tabs-home"]}><img src="/log-out.png" alt="" />Log out</button>
+            <button className={styles["btn-tabs-home"]} onClick={handleLogout}><img src="/log-out.png" alt="" />Log out</button>
         </div>
     )
 }

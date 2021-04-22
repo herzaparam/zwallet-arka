@@ -1,4 +1,5 @@
 import React from 'react'
+import Chart from '../../base/chart'
 import styles from './Graph.module.css'
 
 function Graph() {
@@ -19,7 +20,7 @@ function Graph() {
                 </div>
             </div>
             <div className="graph-bot">
-                <h1>graphics</h1>
+                <Chart />
             </div>
         </div>
     )

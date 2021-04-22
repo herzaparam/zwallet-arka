@@ -30,6 +30,7 @@
     font-weight: bold;
     line-height: 22px;
     color: #4D4B57;
+    margin-bottom: 0;
 }
 .item2 > p{
     font-weight: normal;
@@ -45,4 +46,13 @@
     font-size: 16px;
     line-height: 22px;
 
+}
+.red{
+    color: #FF5B37;
+}
+.item1 > img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 12px;
 }

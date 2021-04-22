@@ -4,6 +4,7 @@
     height: 42px;
     border: none;
     border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    padding-left: 1rem;
 
 }
 .input input[type=password]{
@@ -12,6 +13,11 @@
     height: 42px;
     border: none;
     border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    padding-left: 1rem;
+}
+.input input[type=password]:focus , .input input[type=text]:focus{
+    outline: none;
+    border-bottom: 2px solid #6379F4;
 }
 .input input::placeholder{
     font-style: normal;

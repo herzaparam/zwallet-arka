@@ -1,0 +1,40 @@
+.blue{
+    background-color: #6379F4; 
+    color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border: 2px solid white;  
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    padding: 10px 30px;
+    margin: 0 1em;
+}
+.ml{
+    float: right;
+}
+.group-head{
+    display: flex;
+    justify-content: space-between;
+}
+.group-head > button {
+    font-weight: 700;
+    background:none ;
+    border: none;
+    outline: none;
+}
+.trans-confirm-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 25px;
+    color: #3A3D42;
+}
+.trans-confirm-desc{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(58, 61, 66, 0.6);
+}
+.not-valid{
+    color: red;
+}

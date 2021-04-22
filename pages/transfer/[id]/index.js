@@ -1,13 +1,62 @@
+import React, { useState, useEffect } from 'react'
 import styles from '../../../styles/Transfer.module.css'
-import HomeTab from '../../../src/components/module/HomeTab'
-import axios from 'axios'
 import Navbar from '../../../src/components/module/Navbar'
 import Footer from '../../../src/components/module/Footer'
-import Button from '../../../src/components/base/button'
+import HomeTab from '../../../src/components/module/HomeTab'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import axios from 'axios'
+import axiosApiInstance from '../../../helpers/axios'
 
-export default function TransferId({ user }) {
-    const urlImage = process.env.URL_API_IMAGE
+export default function TransferId() {
+    const urlImage = process.env.URL_API_IMAGE;
+    const api = process.env.URL_API_V1;
+    const router = useRouter();
+    const idReceiver = router.query.id
 
+    const [authenticated, setAuthenticated] = useState(null)
+    const [userSender, setUserSender] = useState([])
+    const [userReceiver, setUserReceiver] = useState([])
+    const [transfer, setTransfer] = useState({
+        amount: 0,
+        date: null,
+        note: ""
+    })
+
+    useEffect(() => {
+        setAuthenticated(localStorage.getItem("token"))
+        if (localStorage.getItem('token')) {
+            axiosApiInstance.get(`${api}users/find-one`)
+                .then((res) => {
+                    const data = res.data.data[0]
+                    setUserSender(data)
+                })
+                .catch((err) => {
+                    alert('something went wrong with id sender token')
+                })
+        };
+        axios.get(`${api}users/find-byid/${idReceiver}`)
+            .then((result) => {
+                setUserReceiver(result.data.data[0])
+            })
+            .catch((err) => {
+                alert('something went wrong with id receiever')
+            });
+    }, [])
+
+    const handleChange = (e) => {
+        setTransfer({
+            ...transfer,
+            date: new Date(),
+            [e.target.name]: e.target.value
+        })
+
+    }
+
+    const handleContinue = () => {
+        localStorage.setItem('amount', JSON.stringify(transfer));
+    }
+    
     return (
         <>
             <Navbar />
@@ -17,57 +66,37 @@ export default function TransferId({ user }) {
                         <div className="col-3">
                             <HomeTab />
                         </div>
-                        <div className={[["col-9"], styles["col-conf"]].join(" ")}>
-                            <div className={styles["trans-confirm-title"]}>
-                                <h3>Transfer To</h3>
-                            </div>
-                            <div className={[styles["trans-confirm-card"], styles["conf-profile"]].join(' ')}>
-                                <img src={`${urlImage}${user.image}`} alt="" />
-                                <div className={styles["trans-user-conf"]}>
-                                    <h3>{user.username}</h3>
-                                    <p>+ {user.phone_number}</p>
+                        <div className={[["col-9"], styles["main-col"]].join(' ')}>
+                            <h5>Transfer Money</h5>
+                            <div className={styles["trans-history"]} >
+                                <div className={styles["item1"]}>
+                                    <img src={`${urlImage}${userReceiver.image}`} alt="" />
+                                </div>
+                                <div className={styles["item2"]}>
+                                    <h5>{userReceiver.username}</h5>
+                                    <p>+{userReceiver.phone_number}</p>
                                 </div>
                             </div>
-                            <div className={styles["trans-confirm-title"]}>
-                                <h3>Details</h3>
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Amount</p>
-                                <input type="number" placeholder="amount of transfer do you want" />
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Balance Left</p>
-                                <h3></h3>
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Date & Time</p>
-                                <h3>May 11, 2020 - 12.20</h3>
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Notes</p>
-                                <h3>For buying some socks</h3>
-                            </div>
-                            <div className={styles["trans-conf-btn"]}>
-                                <Button className="blue" title="Continue" />
+                            <div className={styles["inpt"]}>
+                                <p>Type the amount you want to transfer and then<br /> press continue to the next steps.</p>
+                                <div className={styles["inpt-sect"]}>
+                                    <input type="number" name="amount" placeholder="0,00" onChange={handleChange} />
+                                    <h3>Rp.{userSender.balance}</h3>
+                                    <input type="text" name="note" placeholder="input note here" onChange={handleChange} />
+                                </div>
+                                <Link href={`/transfer/confirmation/${userReceiver.id}`}>
+                                    <button onClick={handleContinue}>Continue</button>
+                                </Link>
+                                
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <Footer />
         </>
+
+
+
     )
-}
-
-export const getServerSideProps = async (context) => {
-    const api = process.env.URL_API_V1
-    const res = await axios.get(`${api}users/find-byid/${context.params.id}`)
-    const user = await res.data.data[0]
-
-    return {
-        props: {
-            user
-        }
-    }
 }

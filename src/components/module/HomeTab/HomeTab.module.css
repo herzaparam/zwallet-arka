@@ -25,3 +25,7 @@
 .btn-tabs-home{
     margin-top: auto;
 }
+.active{
+    color: #6379F4;
+    border-left: 3px solid #6379F4;
+}

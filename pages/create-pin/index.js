@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../styles/CreatePin.module.css'
 import Button from '../../src/components/base/button'
-import Input from '../../src/components/base/input'
 
 function CreatePin() {
     return (

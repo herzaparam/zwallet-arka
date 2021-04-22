@@ -44,7 +44,8 @@
 .item1 > img {
     width: 50px;
     height: 50px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .item2 {
     padding: .5rem;
@@ -151,4 +152,98 @@
 }
 .conf-profile {
     display: flex;
+}
+.inpt {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 24px;
+    min-height: 40vh;
+}
+.inpt > p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: #7A7886;
+}
+.inpt-sect{
+    margin: auto;
+}
+.inpt-sect > h3{
+    margin: 1rem 3rem;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+    color: #3A3D42;    
+}
+.inpt-sect > input[type=number]{
+    width: 80%;
+    height: 50px;
+    padding: 0;
+    margin-right: 5px;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #6379F4;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+.inpt-sect input::-webkit-inner-spin-button, .inpt-sect input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .inpt-sect input:focus, .inpt-sect input.focus {
+    border-color: #6379F4;
+    outline: none;
+    box-shadow: none;
+  }
+.inpt > button {
+    background-color: #6379F4; 
+    color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border: 2px solid white;  
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    padding: 10px 30px;
+    margin: 0 1em;
+    width: 140px;
+    margin-left: auto;
+}
+.change-pass {
+    padding: 0 10rem;
+}
+.passcode-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 6em auto;
+    
+  }
+  .passcode-wrapper input {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin-right: 5px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  .passcode-wrapper input:last-child {
+    margin-right: 0;
+  }
+  .passcode-wrapper input::-webkit-inner-spin-button, .passcode-wrapper input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .passcode-wrapper input:focus, .passcode-wrapper input.focus {
+    border-color: #6379F4;
+    outline: none;
+    box-shadow: none;
+  }
+  .pad-8 {
+  padding: 0 14em ;
 }
