@@ -1,0 +1,107 @@
+.col-conf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 1rem;
+    background-color: black;
+    
+   
+}
+.trans-confirm-title > h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #3A3D42;
+}
+.trans-confirm-card > img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin-right: 20px;
+    
+}
+.trans-user-conf > h3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #4D4B57;
+}
+.trans-user-conf > p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7886;
+}
+.trans-confirm-card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+}
+.trans-confirm-card > p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7886;
+    margin: auto;
+}
+.trans-confirm-card > h3{
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    color: #514F5B;
+    margin: auto;
+}
+.conf-profile {
+    display: flex;
+}
+.input-group {
+    display: flex;
+    align-items: baseline;
+    width: 50%;
+    margin: auto;
+    
+}
+.input-group input[type=number]{
+    width: 100%;
+    margin: 1em 0;
+    height: 42px;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+  
+}
+.input-group input[type=number]:focus{
+    border-bottom: 2px solid #6379F4;
+}
+.input-group input::-webkit-outer-spin-button,
+.input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-span {
+    margin-right: .5rem;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    color: #3A3D42;
+}
+.btn{
+    width: 50%;
+    margin: auto;
+}
+.inputError:focus {
+    border-bottom: 1.5px solid rgba(169, 169, 169, 0.6);
+    
+}
+.errorGroup{
+    display: flex;
+    flex-direction: column;
+}
+.pError {
+    color: red;
+}

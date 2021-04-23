@@ -33,7 +33,11 @@ function Login() {
                 router.push("/home")
             })
             .catch((err) => {
-                console.log(err);
+                Swal.fire(
+                    'Login failed!',
+                    `please make sure your account`,
+                    'try again'
+                )
             })
     }
 

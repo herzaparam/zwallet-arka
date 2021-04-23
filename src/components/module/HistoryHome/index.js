@@ -13,7 +13,6 @@ function HistoryHome() {
     const [history, setUserHistory] = useState([])
 
     useEffect(() => {
-
         if (localStorage.getItem('token')) {
             axiosApiInstance.get(`${api}users/find-one`)
                 .then((res) => {
@@ -29,7 +28,7 @@ function HistoryHome() {
                         })
                 })
                 .catch((err) => {
-                    alert("error find one")
+                    alert("error find onee")
                 })
         }
     }, [])
@@ -45,17 +44,28 @@ function HistoryHome() {
             {history.map((item) => {
                 return (
                     <div className={styles["trans-history"]} key={item.historyID}>
-                        <div className={styles["item1"]}>
-                            <img src={`${urlImage}${item.image}`} alt="" />
-                        </div>
-                        <div className={styles["item2"]}>
-                            <h5>{item.username}</h5>
-                            <p>Transfer</p>
-                        </div>
                         {item.id_sender == userSender.id ?
-                            <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
+                            <>
+                                <div className={styles["item1"]}>
+                                    <img src={`${urlImage}${item.image_receiver}`} alt="" />
+                                </div>
+                                <div className={styles["item2"]}>
+                                    <h5>{item.username_receiver}</h5>
+                                    <p>Transfer</p>
+                                </div>
+                                <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
+                            </>
                             :
-                            <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4> 
+                            <>
+                                <div className={styles["item1"]}>
+                                    <img src={`${urlImage}${item.image}`} alt="" />
+                                </div>
+                                <div className={styles["item2"]}>
+                                    <h5>{item.username}</h5>
+                                    <p>Receive</p>
+                                </div>
+                                <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4>
+                            </>
                         }
 
                     </div>

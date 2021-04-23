@@ -247,3 +247,29 @@
   .pad-8 {
   padding: 0 14em ;
 }
+.del-phone{
+    display: flex;
+    justify-content: space-between;
+}
+.del-phone > button {
+    background: none;
+    outline: none;
+    border: none;
+    color: #6379F4;
+    font-weight: 600;
+}
+.del-phone > button:hover {
+    background: none;
+    outline: none;
+    border: none;
+    color: red;
+    font-weight: 600;
+
+}
+.button-add {
+    color: #3A3D42 !important;  
+}
+.button-add:hover{
+    color: #6379F4 !important;
+  
+}

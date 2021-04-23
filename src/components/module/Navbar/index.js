@@ -64,7 +64,8 @@ function Navbar() {
                         <img src={`${urlImage}${user.image}`} alt="" />
                         <div className={styles["profile-sect"]}>
                             <h5>{user.username}</h5>
-                            <p>+{user.phone_number}</p>
+                            {user.phone_number !== 0 ? <p>+{user.phone_number}</p> : <p>not set</p> }
+                            
                         </div>
                         <div className={styles["pro-bell"]}>
                             <img src="/bell.png" alt="" />
