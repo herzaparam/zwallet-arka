@@ -5,14 +5,23 @@ import Navbar from '../../src/components/module/Navbar'
 import Footer from '../../src/components/module/Footer'
 import Link from 'next/link'
 import axiosApiInstance from '../../helpers/axios'
+import Input from '../../src/components/base/input'
+import Swal from 'sweetalert2'
+import axios from 'axios'
 
 function Profile() {
     const urlImage = process.env.URL_API_IMAGE
     const api = process.env.URL_API_V1
 
     const [user, setUser] = useState([])
+    const [update, setUpdate] = useState({
+        username: "",
+        image: null
+    })
 
-    useEffect(()=>{ 
+    const [show, setShow] = useState(false)
+
+    useEffect(() => {
         if (localStorage.getItem('token')) {
             axiosApiInstance.get(`${api}users/find-one`)
                 .then((res) => {
@@ -23,8 +32,49 @@ function Profile() {
 
                 })
         }
-    },[])    
+    }, []);
 
+
+    const handleChange = (e) => {
+        setUpdate({
+            ...update,
+            [e.target.name]: e.target.value
+        })
+    };
+    const handleChangeImage = (e) => {
+        setUpdate({
+            ...update,
+            image: e.target.files[0]
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("username", update.username)
+        formData.append("image", update.image)
+        axios.put(`${api}users/update-profile/${user.id}`, formData)
+            .then(async(res) => {
+                await Swal.fire(
+                    'Good job!',
+                    'update profile success!',
+                    'success'
+                )
+                setUpdate({
+                    username: "",
+                    image: null
+                })
+                location.reload();
+            })
+            .catch((err) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'can not update profile right now!',
+                })
+            })
+    }
+    
     return (
         <>
             <Navbar />
@@ -35,13 +85,31 @@ function Profile() {
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-profile"]].join(' ')}>
-                            <img src={`${urlImage}${user.image}`} alt="" />
-                            <div className={styles["btn-edit"]}>
-                                <img src="/pencillogo.png" alt="" />
-                                <button>edit</button>
-                            </div>
-                            <h2>{user.first_name} {user.last_name}</h2>
-                            <p>+{user.phone_number}</p>
+
+                            {show == false ?
+                                <>
+                                    <img src={`${urlImage}${user.image}`} alt="" />
+                                    <div className={styles["btn-edit"]}>
+                                        <img src="/pencillogo.png" alt="" />
+                                        <button onClick={e => setShow(true)}>edit</button>
+                                    </div>
+                                    <h2>{user.username}</h2>
+                                    <p>+{user.phone_number}</p>
+                                </>
+                                :
+                                <>
+                                    <label className={styles.label}>
+                                        <img src={`${urlImage}${user.image}`} alt="" />
+                                        <input className={styles.disp} type="file" onChange={(e) => handleChangeImage(e)} />
+                                    </label>
+                                    <div className={styles["btn-edit"]}>
+                                        <img src="/pencillogo.png" alt="" />
+                                        <button onClick={handleSubmit}>edit</button>
+                                    </div>
+                                    <input name="username" className={styles.usernameInput} type="text" value={update.username} onChange={(e) => handleChange(e)} />
+                                    <p>+{user.phone_number}</p>
+                                </>
+                            }
                             <Link href="/profile/personal-info">
                                 <div className={styles["card-profile"]}>
                                     <h3>Personal Information</h3>

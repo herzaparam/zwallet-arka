@@ -1,0 +1,65 @@
+.transaction{
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    padding: 1.5em 1em;
+}
+.trans-history {
+    margin: 2em 2em;
+}
+.trans-history-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.trans-history-title > h5{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #3A3D42;
+}
+.trans-history{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.item1{
+    flex-grow: 1;
+    flex-basis: 20px;
+}
+.item2 {
+    flex-grow: 4;
+    margin: auto;
+}
+.item2 > h5 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #4D4B57;
+    margin-bottom: 0;
+}
+.item2 > p{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #7A7886;
+    margin-bottom: 0;
+}
+.item3{
+    flex-grow: 3;
+    text-align: right;
+    
+    color: #1EC15F;
+    font-size: 16px;
+    line-height: 22px;
+
+}
+.red{
+    color: #FF5B37;
+}
+.item1 > img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 12px;
+}

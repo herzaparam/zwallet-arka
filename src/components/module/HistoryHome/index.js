@@ -18,7 +18,7 @@ function HistoryHome() {
                 .then((res) => {
                     const data = res.data.data[0]
                     setUserSender(data)
-                    axios.get(`${api}transaction/history?page=1&perPage=5&idSender=${userSender.id}`)
+                    axiosApiInstance.get(`${api}transaction/history?page=1&perPage=5&orderBy=historyID&sort=DESC`)
                         .then((res) => {
                             const dataHistory = res.data.data
                             setUserHistory(dataHistory)

@@ -1,12 +1,58 @@
-import React, { useEffect,useState } from 'react'
-import styles from '../../styles/Home.module.css'
+import React, { useEffect, useState } from 'react'
+import styles from '../../styles/History.module.css'
 import HomeTab from '../../src/components/module/HomeTab'
-import History from '../../src/components/module/HistoryHome'
+import axiosApiInstance from '../../helpers/axios'
+import Pagination from '../../src/components/module/Pagination'
+import moment from 'moment'
 
 
 
-export default function TransactionHistory({userSender}) {
-   console.log(userSender);
+export default function TransactionHistory() {
+    const urlImage = process.env.URL_API_IMAGE
+    const api = process.env.URL_API_V1
+
+    const [userSender, setUserSender] = useState([])
+    const [history, setUserHistory] = useState([])
+    const [orderBy, setOrderBy] = useState("created_at")
+    const [sortBy, setSortBy] = useState("DESC")
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(5)
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            axiosApiInstance.get(`${api}users/find-one`)
+                .then((res) => {
+                    const data = res.data.data[0]
+                    setUserSender(data)
+                    axiosApiInstance.get(`${api}transaction/history?page=1&perPage=50&orderBy=${orderBy}&sort=${sortBy}`)
+                        .then((res) => {
+                            const dataHistory = res.data.data
+                            setUserHistory(dataHistory)
+                        })
+                        .catch((err) => {
+                            alert('error history')
+                        })
+                })
+                .catch((err) => {
+                    alert("error find onee")
+                })
+        }
+    }, [orderBy, sortBy])
+
+    const changeSort = (e) =>{
+        setSortBy(e.target.value);
+    }
+    const changeOrder = (e) =>{
+        setOrderBy(e.target.value);
+    }
+
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirsPost = indexOfLastPost - postPerPage;
+    const currentHistory = history.slice(indexOfFirsPost, indexOfLastPost);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
     return (
         <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
             <div className={[["container"], styles["cont-home"]].join(' ')}>
@@ -15,21 +61,58 @@ export default function TransactionHistory({userSender}) {
                         <HomeTab />
                     </div>
                     <div className="col-9">
-                    <div className={styles["trans-history"]} key={item.historyID}>
-                        <div className={styles["item1"]}>
-                            <img src="/user.png" alt="" />
-                        </div>
-                        <div className={styles["item2"]}>
-                            <h5>username static</h5>
-                            <p>Transfer</p>
-                        </div>
-                        {item.id_sender == userSender.id ?
-                            <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
-                            :
-                            <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4> 
-                        }
+                        <div className={styles["transaction"]}>
+                            <div className={styles["trans-history-title"]}>
+                                <h5>Transaction History</h5>
+                            </div>
+                            <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <label className="input-group-text" htmlFor="inputGroupSelect01">Order By</label>
+                                    </div>
+                                    <select className="custom-select" id="inputGroupSelect01" onChange={changeOrder} value={orderBy}>
+                                        <option value="created_at">Date</option>
+                                        <option value="transfer">Amount of transfer</option>
+                                    </select>
+                                    <div className="input-group-prepend">
+                                        <label className="input-group-text" htmlFor="inputGroupSelect01">Sort</label>
+                                    </div>
+                                    <select className="custom-select" id="inputGroupSelect01" onChange={changeSort} value={sortBy}>
+                                        <option value="ASC">ascending</option>
+                                        <option value="DESC">descending</option>
+                                    </select>
+                                </div>
+                            {currentHistory.map((item) => {
+                                return (
+                                    <div className={styles["trans-history"]} key={item.historyID}>
+                                        {item.id_sender == userSender.id ?
+                                            <>
+                                                <div className={styles["item1"]}>
+                                                    <img src={`${urlImage}${item.image_receiver}`} alt="" />
+                                                </div>
+                                                <div className={styles["item2"]}>
+                                                    <h5>{item.username_receiver}</h5>
+                                                    <p>Transfer {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
+                                                </div>
+                                                <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
+                                            </>
+                                            :
+                                            <>
+                                                <div className={styles["item1"]}>
+                                                    <img src={`${urlImage}${item.image}`} alt="" />
+                                                </div>
+                                                <div className={styles["item2"]}>
+                                                    <h5>{item.username}</h5>
+                                                    <p>Receive {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
+                                                </div>
+                                                <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4>
+                                            </>
+                                        }
 
-                    </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <Pagination postPerPage={postPerPage} totalPost={history.length} paginate={paginate} />
                     </div>
                 </div>
 
@@ -37,17 +120,3 @@ export default function TransactionHistory({userSender}) {
         </div>
     )
 }
-// export async function getServerSideProps(context) {
-//     const api = process.env.URL_API_V1
-
-//     if (localStorage.getItem('token')) {
-//         const res = await axios.get(`${api}users/find-one`, {headers:{ authorization:`Bearer ${localStorage.getItem('token')}`}})
-//         const userSender = await res.data.data[0]
-//     }
-
-//     return {
-//       props: {
-//           userSender
-//       }, 
-//     }
-//   }

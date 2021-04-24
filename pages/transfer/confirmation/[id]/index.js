@@ -17,8 +17,6 @@ export default function TransferId() {
     const router = useRouter();
     const idReceiver = router.query.id;
 
-
-
     const [authenticated, setAuthenticated] = useState(null)
     const [userSender, setUserSender] = useState([])
     const [userReceiver, setUserReceiver] = useState([])

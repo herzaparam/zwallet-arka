@@ -8,6 +8,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 function SignUp() {
+    const api = process.env.URL_API_V1;
     const router = useRouter();
 
     const [data, setData] = useState({
@@ -24,7 +25,7 @@ function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/v1/users/', data)
+        axios.post(`${api}users/`, data)
             .then((res) => {
                 Swal.fire(
                     'Register succed!',
@@ -34,10 +35,11 @@ function SignUp() {
                 router.push("/login")
             })
             .catch((err) => {
+                console.log(err);
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Something went wrong!',
+                    text: `${err.message}`,
                 })
             })
     }

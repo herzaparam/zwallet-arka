@@ -16,7 +16,7 @@ export default function Transfer() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get(`${api}users/find-all?page=1&perPage=5&keyword=${text}`)
+        axiosApiInstance.get(`${api}users/find-all?page=1&perPage=5&keyword=${text}`)
             .then((res) => {
                 const newData = res.data.data;
                 setData(newData)
