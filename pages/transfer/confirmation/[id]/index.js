@@ -20,10 +20,18 @@ export default function TransferId() {
     const [authenticated, setAuthenticated] = useState(null)
     const [userSender, setUserSender] = useState([])
     const [userReceiver, setUserReceiver] = useState([])
-    const [transfer, setTransfer] = useState(JSON.parse(localStorage.getItem('amount')))
-
+    const [transfer, setTransfer] = useState({
+        amount: 0,
+        date: null,
+        note: ""
+    })
 
     useEffect(() => {
+        setTransfer({
+            amount: localStorage.getItem("amount"),
+            date: localStorage.getItem("date"),
+            note: localStorage.getItem("note")
+        })
         setAuthenticated(localStorage.getItem("token"))
         if (localStorage.getItem('token')) {
             axiosApiInstance.get(`${api}users/find-one`)
@@ -44,7 +52,7 @@ export default function TransferId() {
             });
     }, [])
 
-    
+
 
 
     return (
@@ -88,7 +96,7 @@ export default function TransferId() {
                             </div>
                             <div className={styles["trans-conf-btn"]}>
                                 {/* <Button className="blue" title="Continue" onClick={submitTransfer} /> */}
-                                <Modals onClick="openModal"/>
+                                <Modals onClick="openModal" />
                             </div>
                         </div>
                     </div>

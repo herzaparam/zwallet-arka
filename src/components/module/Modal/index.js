@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { useState, Component, useEffect } from 'react'
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import OtpInput from 'react-otp-input'
@@ -53,7 +53,19 @@ export default function Modals({ openModal }) {
   const [hasErrored, setHasErrored] = useState(false)
   const [userReceiver, setUserReceiver] = useState([])
   const [userSender, setUserSender] = useState([])
-  const [transfer, setTransfer] = useState(JSON.parse(localStorage.getItem('amount')))
+  const [transfer, setTransfer] = useState({
+    amount: 0,
+    date: null,
+    note: ""
+  })
+
+  useEffect(()=>{
+    setTransfer({
+      amount: localStorage.getItem("amount"),
+      date: localStorage.getItem("date"),
+      note: localStorage.getItem("note")
+  })
+  },[])
 
   const handleChange = otp => setOtp(otp);
 
@@ -97,6 +109,8 @@ export default function Modals({ openModal }) {
                 'success'
               );
               localStorage.removeItem('amount');
+              localStorage.removeItem('date');
+              localStorage.removeItem('note');
               router.push("/home");
             })
             .catch((err) => {

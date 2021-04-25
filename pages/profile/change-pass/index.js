@@ -14,7 +14,6 @@ import { useRouter } from 'next/router'
 export default function PersonalInfo() {
     const urlImage = process.env.URL_API_IMAGE
     const api = process.env.URL_API_V1
-    const token = localStorage.getItem("token")
     const router = useRouter();
     
     const [user, setUser] = useState({
@@ -35,7 +34,6 @@ export default function PersonalInfo() {
         const params = new URLSearchParams()
         params.append('email', user.email)
         params.append('password', user.password)
-        params.append('token', token)
 
         const config = {
             headers: {

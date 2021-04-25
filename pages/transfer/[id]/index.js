@@ -54,7 +54,9 @@ export default function TransferId() {
     }
 
     const handleContinue = () => {
-        localStorage.setItem('amount', JSON.stringify(transfer));
+        localStorage.setItem('amount', transfer.amount);
+        localStorage.setItem('date', transfer.date);
+        localStorage.setItem('note', transfer.note);
     }
     
     return (
