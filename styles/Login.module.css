@@ -29,8 +29,10 @@
     font-weight: bold;
     color: #3A3D42;
 }
+
 .forg-pass{
     align-self: flex-end;
+    
 }
 .create-acc{
     text-align: center;
@@ -41,4 +43,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.activate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.activate > button{
+   
+        background-color: #6379F4; 
+        color: #FFFFFF;
+        border-radius: 12px;
+        box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+        border: 2px solid white;  
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: bold;
+        padding: 10px 30px;
+        margin: 0 1em;
+    
 }

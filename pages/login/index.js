@@ -8,35 +8,41 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 function Login() {
-    const api = process.env.URL_API_V1
-
+    const api = process.env.URL_API_V1;
     const router = useRouter();
+
     const [data, setData] = useState({
         email: "",
         password: ""
     });
+
     const handleChange = (e) => {
         const dataNew = { ...data };
         dataNew[e.target.name] = e.target.value;
         setData(dataNew)
     };
+
     const handleLogin = (e) => {
         e.preventDefault();
         axios.post(`${api}users/auth/login`, data)
-            .then((res) => {   
-                Swal.fire(
+            .then(async(res) => {
+                await Swal.fire(
                     'Login succed!',
                     `${res.data.message}`,
                     'success'
                 )
                 localStorage.setItem("token", res.data.data.token)
-                router.push("/home")
+                if(res.data.data.pin === 0){
+                   router.push("/create-pin")
+               }else{
+                   router.push("/home")
+               }
             })
             .catch((err) => {
                 Swal.fire(
                     'Login failed!',
                     `please make sure your account`,
-                    'try again'
+                    'error'
                 )
             })
     }
@@ -72,8 +78,8 @@ function Login() {
                             placeholder="Enter you password"
                             onChange={handleChange}
                         />
-                        <Link href="/reset-pass">
-                            <p className={styles["forg-pass"]}>Forgot Password?</p>
+                        <Link href="/forgot-pass">
+                            <a className={styles["forg-pass"]}>Forgot Password?</a>
                         </Link>
                         <Button
                             className="grey"

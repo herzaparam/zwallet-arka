@@ -32,7 +32,7 @@ function SignUp() {
                     `${res.data.message}`,
                     'success'
                 )
-                router.push("/login")
+                
             })
             .catch((err) => {
                 console.log(err);

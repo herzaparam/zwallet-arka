@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import styles from './AddPhone.module.css'
 import Input from '../../base/input'
 import Button from '../../base/button'
@@ -9,26 +9,26 @@ export default function AddPhoneNumber() {
     const api = process.env.URL_API_V1;
 
     const [phoneNumber, setPhoneNumber] = useState(null)
-    
+
     const inputNumber = () => {
         axiosApiInstance.put(`${api}users/insert/phonenumber`, phoneNumber)
-        .then((res)=>{
-            Swal.fire(
-                'congratulation!',
-                'phone number succesfully updated!',
-                'success'
-              )
-              location.reload();
-        })
-        .catch((err)=>{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-              })
-        })
+            .then((res) => {
+                Swal.fire(
+                    'congratulation!',
+                    'phone number succesfully updated!',
+                    'success'
+                )
+                location.reload();
+            })
+            .catch((err) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            })
     }
-    const handleChange = (e) =>{
+    const handleChange = (e) => {
         setPhoneNumber({
             number: e.target.value
         })

@@ -36,7 +36,7 @@ export default function PersonalInfo() {
             showDenyButton: true,
             showCancelButton: true,
             denyButtonText: `Delete!`,
-        }).then(async(result) => {
+        }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isDenied) {
                 axiosApiInstance.put(`${api}users/del/phonenumber`)
@@ -45,7 +45,7 @@ export default function PersonalInfo() {
             }
         })
     }
-    const showInput = () =>{
+    const showInput = () => {
         setphoneInput(true)
     }
 
@@ -59,49 +59,49 @@ export default function PersonalInfo() {
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-conf"]].join(" ")}>
-                            {phoneInput == true ? 
-                            <AddPhoneNumber/>: 
-                            <>
-                            <div className={styles["trans-confirm-title"]}>
-                                <h3>We Got Your Personal Information</h3>
-                            </div>
-                            <div className={[styles["trans-confirm-card"], styles["conf-profile"]].join(' ')}>
-                                <p>We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
+                            {phoneInput == true ?
+                                <AddPhoneNumber /> :
+                                <>
+                                    <div className={styles["trans-confirm-title"]}>
+                                        <h3>We Got Your Personal Information</h3>
+                                    </div>
+                                    <div className={[styles["trans-confirm-card"], styles["conf-profile"]].join(' ')}>
+                                        <p>We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
 
-                            </div>
+                                    </div>
 
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>First Name</p>
-                                <h3>{user.first_name}</h3>
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Last name</p>
-                                <h3>{user.last_name}</h3>
-                            </div>
-                            <div className={styles["trans-confirm-card"]}>
-                                <p>Verified Email</p>
-                                <h3>{user.email}</h3>
-                            </div>
-                            <div className={[styles["trans-confirm-card"], styles["del-phone"]].join(' ')}>
-                                {user.phone_number !== 0 ?
-                                    <>
-                                        <div className={styles["trans-confirm-card"]}>
-                                            <p>Phone Number</p>
-                                            <h3>+{user.phone_number}</h3>
-                                        </div>
-                                        <button onClick={deletePhone}>delete</button>
-                                    </> :
-                                    <>
-                                    <div></div>
-                                    <button className={styles["button-add"]} onClick={showInput}>add phone number</button>
-                               </>
-                                }
-                            </div>
-                            </>
+                                    <div className={styles["trans-confirm-card"]}>
+                                        <p>First Name</p>
+                                        <h3>{user.first_name}</h3>
+                                    </div>
+                                    <div className={styles["trans-confirm-card"]}>
+                                        <p>Last name</p>
+                                        <h3>{user.last_name}</h3>
+                                    </div>
+                                    <div className={styles["trans-confirm-card"]}>
+                                        <p>Verified Email</p>
+                                        <h3>{user.email}</h3>
+                                    </div>
+                                    <div className={[styles["trans-confirm-card"], styles["del-phone"]].join(' ')}>
+                                        {user.phone_number !== 0 ?
+                                            <>
+                                                <div className={styles["trans-confirm-card"]}>
+                                                    <p>Phone Number</p>
+                                                    <h3>+{user.phone_number}</h3>
+                                                </div>
+                                                <button onClick={deletePhone}>delete</button>
+                                            </> :
+                                            <>
+                                                <div></div>
+                                                <button className={styles["button-add"]} onClick={showInput}>add phone number</button>
+                                            </>
+                                        }
+                                    </div>
+                                </>
                             }
-                            
-                            
-                            
+
+
+
                         </div>
                     </div>
 
