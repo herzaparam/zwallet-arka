@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# ZWALLET next react app
+an e-wallet application, register with email verification then log in with an activated account. Each account has a balance so user should top up tha balance before user can transfer to other users. There are additional features such as editing username, phone-number, forgot password, reset password, search, sort, pagination and edit PIN. Developed with Next.js and React.js .
+
+## Module and package
+| package       | installation  |
+| ------------- |:-------------:|
+| [axios](https://www.npmjs.com/package/axios) | npm install axios |
+| [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) |  |
+| [moment](https://www.npmjs.com/package/moment) | npm install moment |   
+| [react-dom](https://reactjs.org/docs/react-dom.html) | |
+| [react-modal](https://www.npmjs.com/package/react-modal) | npm install react-modal |
+| [react-otp-input](https://www.npmjs.com/package/react-otp-input) | npm install react-otp-input |
+| [recharts](https://www.npmjs.com/package/recharts) |npm install recharts |
+| [sweetalert](https://www.npmjs.com/package/sweetalert2) | npm install sweetalert2 |
+
 ## Getting Started
 
 First, run the development server:
@@ -14,21 +29,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Preview
+### Home
 
-## Learn More
+### History
 
-To learn more about Next.js, take a look at the following resources:
+### Transfer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Transfer Confirmation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Profile
+
 
 ## Deploy on Vercel
+Check out our [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/) for more details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Colaborator
+Herza Paramayudhanto
+### Thanks to
+[Risano Akbar](https://github.com/muhammadrisano)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Backend Repositories
+[https://github.com/herzaparam/zwallet-api.git](https://github.com/herzaparam/zwallet-api.git)
