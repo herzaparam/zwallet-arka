@@ -32,15 +32,19 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ## Preview
 ### Home
+![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png "home page")
 
 ### History
+![history page](https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png "history page")
 
 ### Transfer
+![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png "home page")
 
 ### Transfer Confirmation
+![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png "home page")
 
 ### Profile
-
+![profile page](https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png "profile page")
 
 ## Deploy on Vercel
 Check out our [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/) for more details.
