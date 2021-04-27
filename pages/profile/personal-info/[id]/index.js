@@ -8,8 +8,7 @@ import Swal from 'sweetalert2'
 import AddPhoneNumber from '../../../../src/components/module/AddPhoneNumber'
 import axios from 'axios'
 
-export default function PersonalInfo({user}) {
-    const urlImage = process.env.URL_API_IMAGE;
+export default function PersonalInfo({ user }) {
     const api = process.env.URL_API_V1;
 
     const [phoneInput, setphoneInput] = useState(false);
@@ -39,7 +38,7 @@ export default function PersonalInfo({user}) {
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                    <div className={[["col-3"],styles["col-3-resp"]].join(" ")}>
+                        <div className={[["col-3"], styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-conf"]].join(" ")}>
