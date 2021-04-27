@@ -2,6 +2,7 @@ import styles from '../styles/Landing.module.css'
 import Button from '../src/components/base/button'
 import CardAbout from '../src/components/module/CardAbout'
 import Navbar from '../src/components/module/Navbar'
+import Footer from '../src/components/module/Footer'
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <Navbar />
       <img src="/Mask Group.png" alt="" srcSet="" />
       <main className="container">
-        <div className="row">
+        <div className={[["row"], styles["row-resp"]].join(" ")}>
           <div className={[["col-6"], styles["side-left"]].join(' ')}>
             <h1>Awesome App <br /> for For Saving <span className={styles["blue-text"]}>Time</span></h1>
             <p>We bring you a mobile app for banking problems that<br /> oftenly wasting much of your times.</p>
@@ -47,7 +48,7 @@ export default function Home() {
 
       <section className="container">
         <div className={[["row"], styles["part-row"]].join(' ')}>
-          <div className="col-6">
+          <div className={[["col-6"],styles["col-6-resp"]].join(" ")}>
             <h1>100+ <span className={styles["blue-text"]}>Trusted</span> <br /> Partners.</h1>
             <p>We have reached global level and have 100+<br /> brand partners around the globe.</p>
           </div>
@@ -67,10 +68,10 @@ export default function Home() {
       <section className={styles["container-abt"]}>
         <div className="container">
           <div className={[["row"], styles["part-row-abt"]].join(' ')}>
-            <div className={[["col-5"],styles['col-img']].join(' ')}>
+            <div className={[["col-5"], styles['col-img']].join(' ')}>
               <img src="/png-phone.png" alt="" />
             </div>
-            <div className={[["col-7"],styles['feat-side-right']].join(' ')}>
+            <div className={[["col-7"], styles['feat-side-right']].join(' ')}>
               <h1>All The <span className={styles["blue-text"]}>Great</span><br />Zwallet Features.</h1>
               <div className={styles["card-feature"]}>
                 <h5><span className={styles["blue-text"]}>1.</span> Small Fee</h5>
@@ -106,7 +107,7 @@ export default function Home() {
               <CardAbout
                 pict="/download.png"
                 title="Robert Chandler"
-                desc={`“Since I’m using this app, I’m not going to move to another similar app. Thank you Zwallet!”`}/>
+                desc={`“Since I’m using this app, I’m not going to move to another similar app. Thank you Zwallet!”`} />
 
             </div>
           </div>
@@ -114,9 +115,7 @@ export default function Home() {
       </section>
 
 
-      <footer className={styles.footer}>
-        <h1>this is footer</h1>
-      </footer>
+      <Footer />
     </div>
   )
 }

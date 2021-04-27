@@ -22,3 +22,8 @@
     object-fit: contain;
     margin-top: 9px;
 }
+@media (max-width: 575.98px) { 
+    .card-about{
+        height: 25vh;
+    }
+}

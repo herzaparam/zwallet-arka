@@ -12,7 +12,7 @@ function TopUp() {
         <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
             <div className={[["container"], styles["cont-home"]].join(' ')}>
                 <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                    <div className="col-3">
+                <div className={[["col-3"],styles["col-3-resp"]].join(" ")}>
                         <HomeTab />
                     </div>
                     <div className={[["col-9"],styles["column-topup"]].join(' ')}>

@@ -1,32 +1,18 @@
 import { useState, useEffect } from 'react'
-import styles from '../../../styles/Transfer.module.css'
-import HomeTab from '../../../src/components/module/HomeTab'
-import Navbar from '../../../src/components/module/Navbar'
-import Footer from '../../../src/components/module/Footer'
-import Button from '../../../src/components/base/button'
-import axiosApiInstance from '../../../helpers/axios'
+import styles from '../../../../styles/Transfer.module.css'
+import HomeTab from '../../../../src/components/module/HomeTab'
+import Navbar from '../../../../src/components/module/Navbar'
+import Footer from '../../../../src/components/module/Footer'
+import axiosApiInstance from '../../../../helpers/axios'
 import Swal from 'sweetalert2'
-import AddPhoneNumber from '../../../src/components/module/AddPhoneNumber'
+import AddPhoneNumber from '../../../../src/components/module/AddPhoneNumber'
+import axios from 'axios'
 
-export default function PersonalInfo() {
+export default function PersonalInfo({user}) {
     const urlImage = process.env.URL_API_IMAGE;
     const api = process.env.URL_API_V1;
 
-    const [user, setUser] = useState([]);
     const [phoneInput, setphoneInput] = useState(false);
-
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
-            axiosApiInstance.get(`${api}users/find-one`)
-                .then((res) => {
-                    const data = res.data.data[0]
-                    setUser(data)
-                })
-                .catch((err) => {
-                    console.log('tes');
-                })
-        }
-    }, []);
 
     const deletePhone = () => {
         Swal.fire({
@@ -37,11 +23,9 @@ export default function PersonalInfo() {
             showCancelButton: true,
             denyButtonText: `Delete!`,
         }).then(async (result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isDenied) {
                 axiosApiInstance.put(`${api}users/del/phonenumber`)
                 await Swal.fire('phone number has been deleted!', 'please add your phone number!', '')
-                location.reload();
             }
         })
     }
@@ -55,7 +39,7 @@ export default function PersonalInfo() {
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className="col-3">
+                    <div className={[["col-3"],styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-conf"]].join(" ")}>
@@ -110,4 +94,16 @@ export default function PersonalInfo() {
             <Footer />
         </>
     )
+}
+export const getServerSideProps = async (context) => {
+    const api = process.env.URL_API_V1
+    const id = context.params.id
+    const res = await axios.get(`${api}users/get-one/${id}`)
+    const user = await res.data.data[0]
+
+    return {
+        props: {
+            user
+        }
+    }
 }

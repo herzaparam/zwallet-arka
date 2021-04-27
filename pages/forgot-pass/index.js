@@ -5,8 +5,8 @@ import Input from '../../src/components/base/input'
 
 function ResetPass() {
     return (
-        <div className="row">
-            <div className="col-7">
+        <div className={[styles["row-resp"], ["row"]].join(' ')}>
+            <div className={[styles["col-left"], ["col-7"]].join(' ')}>
                 <div className={[["jumbotron"], ["jumbotron-fluid"], styles["jumbo-tron"]].join(' ')}>
                     <div className={[["container"], styles["cont-jumbo"]].join(' ')}>
                         <h3 className={styles["heading-white"]}>Zwallet</h3>
@@ -16,7 +16,8 @@ function ResetPass() {
                     </div>
                 </div>
             </div>
-            <div className="col-5">
+            <div className={[styles["col-5-resp"], ["col-5"]].join(' ')}>
+                <h2>Zwallet</h2>
                 <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Did You Forgot Your Password? Don’t Worry, You Can Reset Your Password In a Minutes.</h3>
                     <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>

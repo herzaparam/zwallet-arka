@@ -15,18 +15,22 @@ function Home() {
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className="col-3">
+                        <div className={[styles["col-3-resp"], ["col-3"]].join(' ')}>
                             <HomeTab />
                         </div>
-                        <div className="col-9">
+                        <div className={[styles["col-9-resp"], ["col-9"]].join(" ")}>
                             <div className="row">
                                 <Balance />
                             </div>
+                            <div className={styles["btn-resp"]}>
+                                <button className={styles["btn-resp-home"]}><img src="/arrow-up.png" alt="" /> Transfer</button>
+                                <button className={styles["btn-resp-home"]}><img src="/plus.png" alt="" /> Top Up</button>
+                            </div>
                             <div className={[["row"], styles["cont-row-graph"]].join(' ')}>
-                                <div className="col-7">
+                                <div className={[styles["col-7-resp"], ["col-7"]].join(' ')}>
                                     <Graph />
                                 </div>
-                                <div className="col-5">
+                                <div className={[styles["col-5-resp"], ["col-5"]].join(" ")}>
                                     <History />
                                 </div>
                             </div>

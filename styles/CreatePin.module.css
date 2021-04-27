@@ -72,3 +72,44 @@
     outline: none;
     box-shadow: none;
   }
+  .col-5-resp > h2{
+    display: none;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 35px;
+    color: #6379F4;
+    text-align: center;
+}
+
+@media (max-width: 1199.98px) {
+    .cont-jumbo{
+        padding: 0 4em;
+    }
+    .cont-side-right, .jumbo-tron{
+        height: 80vh;
+    }
+    
+}
+
+@media (max-width: 575.98px) { 
+    .row-resp{
+        display: block;
+    }
+    .col-left{
+        display: none;
+    }
+   
+    .col-5-resp{
+        max-width: 100%;
+    }
+    .cont-side-right{
+        padding: 2em 2em;
+        height: 100vh;
+        background-color: white;
+    }
+    .col-5-resp > h2{
+        margin-top: 1.5em;
+        display: block;
+    }
+
+ }

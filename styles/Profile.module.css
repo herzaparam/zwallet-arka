@@ -117,3 +117,31 @@
 .disp {
     display: none;
 }
+.col-profile > h2{
+    display: none;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 35px;
+    color: #6379F4;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) { 
+   .cont-row-home{
+       display: block;
+   }
+   .col-profile{
+       margin: 0 ;
+       max-width: 100%;
+   }
+    .col-3-resp{
+       display: none;
+   }
+   .card-profile > h3 {
+       line-height: 20px;
+   }
+   .col-profile > h2 {
+       display: block;
+       margin-bottom:1em ;
+   }
+}

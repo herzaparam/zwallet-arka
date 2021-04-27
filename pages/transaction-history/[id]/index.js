@@ -1,15 +1,12 @@
-import styles from '../../../../styles/Transfer.module.css'
+import styles from '../../../styles/Transfer.module.css'
 import { useEffect, useState } from 'react'
-import HomeTab from '../../../../src/components/module/HomeTab'
+import HomeTab from '../../../src/components/module/HomeTab'
 import axios from 'axios'
-import Navbar from '../../../../src/components/module/Navbar'
-import Footer from '../../../../src/components/module/Footer'
-import Button from '../../../../src/components/base/button'
+import Navbar from '../../../src/components/module/Navbar'
+import Footer from '../../../src/components/module/Footer'
 import { useRouter } from 'next/router'
-import axiosApiInstance from '../../../../helpers/axios'
+import axiosApiInstance from '../../../helpers/axios'
 import moment from 'moment'
-import Swal from 'sweetalert2'
-import Modals from '../../../../src/components/module/Modal'
 
 export default function TransferId() {
     const urlImage = process.env.URL_API_IMAGE;
@@ -25,32 +22,8 @@ export default function TransferId() {
         date: null,
         note: ""
     })
+    
 
-    useEffect(() => {
-        setTransfer({
-            amount: localStorage.getItem("amount"),
-            date: localStorage.getItem("date"),
-            note: localStorage.getItem("note")
-        })
-        setAuthenticated(localStorage.getItem("token"))
-        if (localStorage.getItem('token')) {
-            axiosApiInstance.get(`${api}users/find-one`)
-                .then((res) => {
-                    const data = res.data.data[0]
-                    setUserSender(data)
-                })
-                .catch((err) => {
-                    alert('something went wrong with id sender token')
-                })
-        };
-        axios.get(`${api}users/find-byid/${idReceiver}`)
-            .then((result) => {
-                setUserReceiver(result.data.data[0])
-            })
-            .catch((err) => {
-                alert('something went wrong with id receiever')
-            });
-    }, [])
 
 
 
@@ -79,7 +52,7 @@ export default function TransferId() {
                                 <h3>Details</h3>
                             </div>
                             <div className={styles["trans-confirm-card"]}>
-                                <p>Amount</p>
+                                <p>transfer amount</p>
                                 <h3>Rp. {transfer.amount}</h3>
                             </div>
                             <div className={styles["trans-confirm-card"]}>
@@ -91,13 +64,10 @@ export default function TransferId() {
                                 <h3>{moment(transfer.date).format('LL')} - {moment(transfer.date).format('LT')}</h3>
                             </div>
                             <div className={styles["trans-confirm-card"]}>
-                                <p>Notes</p>
+                                <p>Receiver</p>
                                 <h3>{transfer.note}</h3>
                             </div>
-                            <div className={styles["trans-conf-btn"]}>
-                                {/* <Button className="blue" title="Continue" onClick={submitTransfer} /> */}
-                                <Modals onClick="openModal" />
-                            </div>
+
                         </div>
                     </div>
 
@@ -106,5 +76,17 @@ export default function TransferId() {
             <Footer />
         </>
     )
+}
+
+export const getServerSideProps = async (context) => {
+    const api = process.env.URL_API_V1
+    const res = await axios.get(`${api}transaction/history?page=1&perPage=1&orderBy=historyId&sort=DESC`)
+    const user = await res.data.data[0]
+
+    return {
+        props: {
+            user
+        }
+    }
 }
 

@@ -76,8 +76,8 @@ function CreatePin() {
     }
 
     return (
-        <div className="row">
-            <div className="col-7">
+        <div className={[styles["row-resp"], ["row"]].join(' ')}>
+            <div className={[styles["col-left"], ["col-7"]].join(' ')}>
                 <div className={[["jumbotron"], ["jumbotron-fluid"], styles["jumbo-tron"]].join(' ')}>
                     <div className={[["container"], styles["cont-jumbo"]].join(' ')}>
                         <h3 className={styles["heading-white"]}>Zwallet</h3>
@@ -87,7 +87,8 @@ function CreatePin() {
                     </div>
                 </div>
             </div>
-            <div className="col-5">
+            <div className={[styles["col-5-resp"], ["col-5"]].join(' ')}>
+                <h2>Zwallet</h2>
                 <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Secure Your Account, Your Wallet, and Your Data With 6 Digits PIN That You Created Yourself.</h3>
                     <p>Create 6 digits pin to secure all your money and your data in Zwallet app. Keep it secret and don’t tell anyone about your Zwallet account password and the PIN.</p>

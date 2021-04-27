@@ -32,7 +32,7 @@ function SignUp() {
                     `${res.data.message}`,
                     'success'
                 )
-                
+
             })
             .catch((err) => {
                 console.log(err);
@@ -45,8 +45,8 @@ function SignUp() {
     }
 
     return (
-        <div className="row">
-            <div className="col-7">
+        <div className={[styles["row-resp"], ["row"]].join(' ')}>
+            <div className={[styles["col-left"], ["col-7"]].join(' ')}>
                 <div className={[["jumbotron"], ["jumbotron-fluid"], styles["jumbo-tron"]].join(' ')}>
                     <div className={[["container"], styles["cont-jumbo"]].join(' ')}>
                         <h3 className={styles["heading-white"]}>Zwallet</h3>
@@ -56,7 +56,8 @@ function SignUp() {
                     </div>
                 </div>
             </div>
-            <div className="col-5">
+            <div className={[styles["col-5-resp"], ["col-5"]].join(' ')}>
+                <h2>Zwallet</h2>
                 <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
                     <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>

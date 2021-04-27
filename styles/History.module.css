@@ -63,3 +63,24 @@
     object-fit: cover;
     border-radius: 12px;
 }
+@media (max-width: 991.98px) {
+    .cont-fluid{
+        padding: 0;
+    }
+    .col-3-resp{
+        display: none;
+    }
+    .cont-row-home{
+        display: block;
+    }
+    .col-9-resp {
+        margin: 0;
+        max-width: 100%;
+    }
+    .trans-history{
+        margin: 2em 1em;
+    }
+    .item1 > img {
+        margin-right: 5px;
+    }
+}

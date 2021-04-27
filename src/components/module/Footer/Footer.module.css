@@ -20,4 +20,9 @@
 .sect-2{
     margin-right: 2rem;
 }
+@media (max-width: 991.98px) {
+    .footer-loggedin{
+        display: none;
+    }
+}
 

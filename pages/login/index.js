@@ -25,18 +25,18 @@ function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
         axios.post(`${api}users/auth/login`, data)
-            .then(async(res) => {
+            .then(async (res) => {
                 await Swal.fire(
                     'Login succed!',
                     `${res.data.message}`,
                     'success'
                 )
                 localStorage.setItem("token", res.data.data.token)
-                if(res.data.data.pin === 0){
-                   router.push("/create-pin")
-               }else{
-                   router.push("/home")
-               }
+                if (res.data.data.pin === 0) {
+                    router.push("/create-pin")
+                } else {
+                    router.push("/home")
+                }
             })
             .catch((err) => {
                 Swal.fire(
@@ -48,8 +48,8 @@ function Login() {
     }
 
     return (
-        <div className="row">
-            <div className="col-7">
+        <div className={[styles["row-resp"], ["row"]].join(' ')}>
+            <div className={[styles["col-left"], ["col-7"]].join(' ')}>
                 <div className={[["jumbotron"], ["jumbotron-fluid"], styles["jumbo-tron"]].join(' ')}>
                     <div className={[["container"], styles["cont-jumbo"]].join(' ')}>
                         <h3 className={styles["heading-white"]}>Zwallet</h3>
@@ -59,7 +59,8 @@ function Login() {
                     </div>
                 </div>
             </div>
-            <div className="col-5">
+            <div className={[styles["col-5-resp"], ["col-5"]].join(' ')}>
+                    <h2>Zwallet</h2>
                 <div className={[["container"], styles["cont-side-right"]].join(' ')}>
                     <h3 className={styles["heading-black"]}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
                     <p>Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>

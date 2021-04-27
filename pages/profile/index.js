@@ -34,7 +34,6 @@ function Profile() {
         }
     }, []);
 
-
     const handleChange = (e) => {
         setUpdate({
             ...update,
@@ -64,7 +63,6 @@ function Profile() {
                     username: "",
                     image: null
                 })
-                location.reload();
             })
             .catch((err) => {
                 Swal.fire({
@@ -81,10 +79,11 @@ function Profile() {
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className="col-3">
+                        <div className={[["col-3"],styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-profile"]].join(' ')}>
+                        <h2>Zwallet</h2>
 
                             {show == false ?
                                 <>
@@ -110,7 +109,7 @@ function Profile() {
                                     <p>+{user.phone_number}</p>
                                 </>
                             }
-                            <Link href="/profile/personal-info">
+                            <Link href={`/profile/personal-info/${user.id}`}>
                                 <div className={styles["card-profile"]}>
                                     <h3>Personal Information</h3>
                                     <img src="/arrow-left.png" alt="" />

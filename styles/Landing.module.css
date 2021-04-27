@@ -92,3 +92,54 @@
   padding: 4em 0;
   background-color: white;
 }
+
+@media (max-width: 575.98px) { 
+  .container > img {
+    display: none;
+  }
+  .side-right{
+    display: none;
+  }
+  .side-left{
+    display: block;
+    margin: 1rem;
+    max-width: 90%;
+    padding-right: 0;
+  }
+  .container h1 {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  .container p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .row-resp{
+    display: block;
+
+  }
+  .card-abt-section{
+    flex-direction: column;
+  }
+  .part-row{
+    display: block;
+  }
+  .partner {
+    display: none;
+  }
+  .col-6-resp{
+    max-width: 100%;
+  }
+  .col-img{
+    display: none;
+  }
+  .part-row-abt{
+    display: block;
+  }
+  .feat-side-right{
+    max-width: 100%;
+    margin: 0;
+    padding-top: 0 ;
+  }
+  
+}

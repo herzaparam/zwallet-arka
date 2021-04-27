@@ -38,3 +38,16 @@
 .btn-balance img{
     margin-right: .7em;
 }
+
+
+@media (max-width: 575.98px) {
+    .balance-home{
+        border-top-left-radius: 0px ;
+        border-top-right-radius: 0px ;
+    }
+    .btn-balance > button {
+        display: none;
+    }
+   
+    
+}

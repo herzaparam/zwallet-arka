@@ -58,14 +58,14 @@ export default function TransferId() {
         localStorage.setItem('date', transfer.date);
         localStorage.setItem('note', transfer.note);
     }
-    
+
     return (
         <>
             <Navbar />
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className="col-3">
+                        <div className={[["col-3"], styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["main-col"]].join(' ')}>
@@ -89,7 +89,7 @@ export default function TransferId() {
                                 <Link href={`/transfer/confirmation/${userReceiver.id}`}>
                                     <button onClick={handleContinue}>Continue</button>
                                 </Link>
-                                
+
                             </div>
                         </div>
                     </div>

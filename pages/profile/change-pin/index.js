@@ -30,7 +30,7 @@ export default function PersonalInfo() {
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className="col-3">
+                        <div className={[["col-3"], styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-conf"]].join(" ")}>
@@ -48,7 +48,7 @@ export default function PersonalInfo() {
                                     <input id="codeBox1" type="number" maxlength="6" onkeyup="onKeyUpEvent(6, event)" onfocus="onFocusEvent(6)" />
                                 </div>
                                 <div className={styles["pad-8"]}>
-                                <Button className="grey" title="Continue" />
+                                    <Button className="grey" title="Continue" />
                                 </div>
                             </div>
                         </div>

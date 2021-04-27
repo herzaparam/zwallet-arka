@@ -4,6 +4,7 @@ import HomeTab from '../../src/components/module/HomeTab'
 import axiosApiInstance from '../../helpers/axios'
 import Pagination from '../../src/components/module/Pagination'
 import moment from 'moment'
+import Link from 'next/link'
 
 
 
@@ -40,10 +41,10 @@ export default function TransactionHistory() {
         }
     }, [orderBy, sortBy])
 
-    const changeSort = (e) =>{
+    const changeSort = (e) => {
         setSortBy(e.target.value);
     }
-    const changeOrder = (e) =>{
+    const changeOrder = (e) => {
         setOrderBy(e.target.value);
     }
 
@@ -57,58 +58,60 @@ export default function TransactionHistory() {
         <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
             <div className={[["container"], styles["cont-home"]].join(' ')}>
                 <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                    <div className="col-3">
+                    <div className={[["col-3"], styles["col-3-resp"]].join(" ")}>
                         <HomeTab />
                     </div>
-                    <div className="col-9">
+                    <div className={[["col-9"], styles["col-9-resp"]].join(" ")}>
                         <div className={styles["transaction"]}>
                             <div className={styles["trans-history-title"]}>
                                 <h5>Transaction History</h5>
                             </div>
                             <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <label className="input-group-text" htmlFor="inputGroupSelect01">Order By</label>
-                                    </div>
-                                    <select className="custom-select" id="inputGroupSelect01" onChange={changeOrder} value={orderBy}>
-                                        <option value="created_at">Date</option>
-                                        <option value="transfer">Amount of transfer</option>
-                                    </select>
-                                    <div className="input-group-prepend">
-                                        <label className="input-group-text" htmlFor="inputGroupSelect01">Sort</label>
-                                    </div>
-                                    <select className="custom-select" id="inputGroupSelect01" onChange={changeSort} value={sortBy}>
-                                        <option value="ASC">ascending</option>
-                                        <option value="DESC">descending</option>
-                                    </select>
+                                <div className="input-group-prepend">
+                                    <label className="input-group-text" htmlFor="inputGroupSelect01">Order By</label>
                                 </div>
+                                <select className="custom-select" id="inputGroupSelect01" onChange={changeOrder} value={orderBy}>
+                                    <option value="created_at">Date</option>
+                                    <option value="transfer">Amount of transfer</option>
+                                </select>
+                                <div className="input-group-prepend">
+                                    <label className="input-group-text" htmlFor="inputGroupSelect01">Sort</label>
+                                </div>
+                                <select className="custom-select" id="inputGroupSelect01" onChange={changeSort} value={sortBy}>
+                                    <option value="ASC">ascending</option>
+                                    <option value="DESC">descending</option>
+                                </select>
+                            </div>
                             {currentHistory.map((item) => {
                                 return (
-                                    <div className={styles["trans-history"]} key={item.historyID}>
-                                        {item.id_sender == userSender.id ?
-                                            <>
-                                                <div className={styles["item1"]}>
-                                                    <img src={`${urlImage}${item.image_receiver}`} alt="" />
-                                                </div>
-                                                <div className={styles["item2"]}>
-                                                    <h5>{item.username_receiver}</h5>
-                                                    <p>Transfer {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
-                                                </div>
-                                                <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
-                                            </>
-                                            :
-                                            <>
-                                                <div className={styles["item1"]}>
-                                                    <img src={`${urlImage}${item.image}`} alt="" />
-                                                </div>
-                                                <div className={styles["item2"]}>
-                                                    <h5>{item.username}</h5>
-                                                    <p>Receive {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
-                                                </div>
-                                                <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4>
-                                            </>
-                                        }
+                                    <Link href={`/transaction-history/${item.historyID}`} key={item.historyID}>
+                                        <div className={styles["trans-history"]} >
+                                            {item.id_sender == userSender.id ?
+                                                <>
+                                                    <div className={styles["item1"]}>
+                                                        <img src={`${urlImage}${item.image_receiver}`} alt="" />
+                                                    </div>
+                                                    <div className={styles["item2"]}>
+                                                        <h5>{item.username_receiver}</h5>
+                                                        <p>Transfer {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
+                                                    </div>
+                                                    <h4 className={[styles["item3"], styles["red"]].join(' ')}>-Rp. {item.transfer}</h4>
+                                                </>
+                                                :
+                                                <>
+                                                    <div className={styles["item1"]}>
+                                                        <img src={`${urlImage}${item.image}`} alt="" />
+                                                    </div>
+                                                    <div className={styles["item2"]}>
+                                                        <h5>{item.username}</h5>
+                                                        <p>Receive {moment(`${item.created_at}`).startOf('day').fromNow()}</p>
+                                                    </div>
+                                                    <h4 className={styles["item3"]}>+Rp. {item.transfer}</h4>
+                                                </>
+                                            }
 
-                                    </div>
+                                        </div>
+                                    </Link>
                                 )
                             })}
                         </div>
