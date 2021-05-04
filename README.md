@@ -51,8 +51,7 @@ Check out our [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zw
 
 ## Colaborator
 Herza Paramayudhanto
-### Thanks to
-[Risano Akbar](https://github.com/muhammadrisano)
+
 
 ## Backend Repositories
 [https://github.com/herzaparam/zwallet-api.git](https://github.com/herzaparam/zwallet-api.git)
