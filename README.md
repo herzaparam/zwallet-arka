@@ -36,8 +36,17 @@ npm install
 ```
 3. Add .env file at root folder project, and add following
 ```sh
-REACT_APP_API_URL=[Backend API]
-REACT_APP_API_IMG=[url backend images]
+URL_API_V1=[Backend API]
+URL_API_IMAGE=[url backend images]
+```
+add next.config.js file at root folder project, and add following
+```sh
+module.exports = {
+    env: {
+        URL_API_V1: process.env.URL_API_V1,
+        URL_API_IMAGE: process.env.URL_API_IMAGE
+    }
+}
 ```
 
 In the project directory, you can run:
