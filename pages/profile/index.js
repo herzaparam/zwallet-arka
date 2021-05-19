@@ -29,7 +29,7 @@ function Profile() {
                     setUser(data)
                 })
                 .catch((err) => {
-
+                    console.log(err);
                 })
         }
     }, []);
@@ -50,10 +50,10 @@ function Profile() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("username", update.username)
+        formData.append("username", update.username ? update.username : user.username)
         formData.append("image", update.image)
         axios.put(`${api}users/update-profile/${user.id}`, formData)
-            .then(async(res) => {
+            .then(async (res) => {
                 await Swal.fire(
                     'Good job!',
                     'update profile success!',
@@ -63,28 +63,28 @@ function Profile() {
                     username: "",
                     image: null
                 })
+                setShow(false)
             })
             .catch((err) => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'can not update profile right now!',
+                    text: err.response.data.message,
                 })
             })
     }
-    
+
     return (
         <>
             <Navbar />
             <div className={[["container-fluid"], styles["cont-fluid"]].join(' ')}>
                 <div className={[["container"], styles["cont-home"]].join(' ')}>
                     <div className={[["row"], styles["cont-row-home"]].join(' ')}>
-                        <div className={[["col-3"],styles["col-3-resp"]].join(" ")}>
+                        <div className={[["col-3"], styles["col-3-resp"]].join(" ")}>
                             <HomeTab />
                         </div>
                         <div className={[["col-9"], styles["col-profile"]].join(' ')}>
-                        <h2>Zwallet</h2>
-
+                            
                             {show == false ?
                                 <>
                                     <img src={`${urlImage}${user.image}`} alt="" />
@@ -93,7 +93,7 @@ function Profile() {
                                         <button onClick={e => setShow(true)}>edit</button>
                                     </div>
                                     <h2>{user.username}</h2>
-                                    <p>+{user.phone_number}</p>
+                                    {user.phone_number ? <p>+{user.phone_number}</p> : <p>not set</p>}
                                 </>
                                 :
                                 <>
@@ -106,7 +106,7 @@ function Profile() {
                                         <button onClick={handleSubmit}>edit</button>
                                     </div>
                                     <input name="username" className={styles.usernameInput} type="text" value={update.username} onChange={(e) => handleChange(e)} />
-                                    <p>+{user.phone_number}</p>
+                                    {user.phone_number ? <p>+{user.phone_number}</p> : <p>not set</p>}
                                 </>
                             }
                             <Link href={`/profile/personal-info/${user.id}`}>

@@ -72,6 +72,17 @@
     text-align: center;
 }
 
+.cont-token {
+    width: 20em;
+}
+.page-token {
+    padding-top: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1199.98px) {
     .cont-jumbo{
         padding: 0 4em;

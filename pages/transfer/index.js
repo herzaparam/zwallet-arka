@@ -53,7 +53,7 @@ export default function Transfer() {
                                             </div>
                                             <div className={styles["item2"]}>
                                                 <h5>{user.username}</h5>
-                                                <p>+{user.phone_number}</p>
+                                                {user.phone_number ? <p>+{user.phone_number}</p> : <p>not set</p> }
                                             </div>
                                         </div>
                                     </ Link >

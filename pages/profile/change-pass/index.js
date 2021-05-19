@@ -40,7 +40,7 @@ export default function PersonalInfo() {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
           }
-
+          
         if (user.password == user.confirmPassword) {
             axios.put(`${api}users/auth/reset-password`, params, config)
             .then((res) => {
@@ -84,7 +84,7 @@ export default function PersonalInfo() {
                                 <p>You must enter your current password and then type your new password twice.</p>
                             </div>
                             <div className={[styles["trans-confirm-card"], styles["change-pass"]].join(' ')}>
-                                <Input name="email" type="text" placeholder="Current Password" onChange={handleChange} />
+                                <Input name="email" type="text" placeholder="Email" onChange={handleChange} />
                                 <Input name="password" type="password" placeholder="New Password" onChange={handleChange} />
                                 <Input name="confirmPassword" type="password" placeholder="Repeat New Password" onChange={handleChange} />
                                 <Button title="change password" className="grey" onClick={handleSubmit}/>

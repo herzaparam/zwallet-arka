@@ -26,14 +26,14 @@ function Balance() {
                 <div className={styles["balance"]}>
                     <p>Balance</p>
                     <h3>Rp.{user.balance}</h3>
-                    <p>+{user.phone_number}</p>
+                    {user.phone_number ? <p>+ {user.phone_number}</p> : <p>not set</p>}
                 </div>
                 <div className={styles["btn-balance"]}>
                     <button><img src="/arrow-up.png" alt="" /> Transfer</button>
                     <button><img src="/plus.png" alt="" /> Top Up</button>
                 </div>
             </div>
-           
+
         </>
     )
 }

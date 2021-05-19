@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../styles/Login.module.css'
 import Button from '../../src/components/base/button'
 import Input from '../../src/components/base/input'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 function ResetPass() {
+    const api = process.env.URL_API_V1;
+
+    const [email, setEmail] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post(`${api}/users/auth/forgot-password`, { email: email })
+        .then((res)=>{
+            Swal.fire(
+                'find email succed!',
+                `${res.data.message}`,
+                'success'
+            )
+        })
+        .catch((err)=>{
+            Swal.fire(
+                'find email failed!',
+                `please make sure your account`,
+                'error'
+            )
+        })
+    }
+    const handleChange = (e) => {
+        e.target.name = e.target.value
+        setEmail(e.target.name)
+    }
+
     return (
         <div className={[styles["row-resp"], ["row"]].join(' ')}>
             <div className={[styles["col-left"], ["col-7"]].join(' ')}>
@@ -23,13 +52,15 @@ function ResetPass() {
                     <p>To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
                     <Input
                         label=""
-                        nameInput="password"
-                        type="password"
-                        placeholder="Enter you password"
+                        name="email"
+                        type="text"
+                        placeholder="Enter you email"
+                        onChange={handleChange}
                     />
                     <Button
                         className="grey"
                         title="Confirm"
+                        onClick={handleSubmit}
                     />
                 </div>
             </div>
