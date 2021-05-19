@@ -1,6 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-# ZWALLET next react app
+<div align="center">
+  <img width="350" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/nextjslogo.png" alt="next.js logo">
+ </div> 
+<h1 align="center">Zwallet</h1>
 an e-wallet application, register with email verification then log in with an activated account. Each account has a balance so user should top up tha balance before user can transfer to other users. There are additional features such as editing username, phone-number, forgot password, reset password, search, sort, pagination and edit PIN. Developed with Next.js and React.js .
 
 ## Module and package
@@ -17,42 +18,67 @@ an e-wallet application, register with email verification then log in with an ac
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+This is an example of how to list things you need to use the software and how to install them.
+
+* [nodejs](https://nodejs.org/en/download/)
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/herzaparam/telegram-app-arka.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Add .env file at root folder project, and add following
+```sh
+URL_API_V1=[Backend API]
+URL_API_IMAGE=[url backend images]
+```
+add next.config.js file at root folder project, and add following
+```sh
+module.exports = {
+    env: {
+        URL_API_V1: process.env.URL_API_V1,
+        URL_API_IMAGE: process.env.URL_API_IMAGE
+    }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In the project directory, you can run:
+### `npm run dev`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+---
 ## Preview
-### Home
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png "home page")
 
-### History
-![history page](https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png "history page")
+Here's some preview from my website :
 
-### Transfer
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png "home page")
+<div align="center">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png" alt="Home page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png" alt="History page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png" alt="Transfer page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png" alt="Confirm tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png" alt="Edit Profile tab">
+</div>
 
-### Transfer Confirmation
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png "home page")
+---
+## Publication
+you can visit our website here : [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/)
 
-### Profile
-![profile page](https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png "profile page")
+## Back end Repositories
+visit [here](https://github.com/herzaparam/zwallet-api.git)
 
-## Deploy on Vercel
-Check out our [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/) for more details.
+## Contributor
+[Herza Paramayudhanto](https://github.com/herzaparam)
 
-## Colaborator
-Herza Paramayudhanto
-### Thanks to
-[Risano Akbar](https://github.com/muhammadrisano)
+contact :
+herzaparam@gmail.com
 
-## Backend Repositories
-[https://github.com/herzaparam/zwallet-api.git](https://github.com/herzaparam/zwallet-api.git)
