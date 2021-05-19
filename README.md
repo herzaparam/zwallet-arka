@@ -17,41 +17,58 @@ an e-wallet application, register with email verification then log in with an ac
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+This is an example of how to list things you need to use the software and how to install them.
+
+* [nodejs](https://nodejs.org/en/download/)
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/herzaparam/telegram-app-arka.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Add .env file at root folder project, and add following
+```sh
+REACT_APP_API_URL=[Backend API]
+REACT_APP_API_IMG=[url backend images]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In the project directory, you can run:
+### `npm run dev`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+---
 ## Preview
-### Home
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png "home page")
 
-### History
-![history page](https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png "history page")
+Here's some preview from my website :
 
-### Transfer
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png "home page")
+<div align="center">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png" alt="Home page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png" alt="History page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png" alt="Transfer page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png" alt="Confirm tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png" alt="Edit Profile tab">
+</div>
 
-### Transfer Confirmation
-![home page](https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png "home page")
+---
+## Publication
+you can visit our website here : [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/)
 
-### Profile
-![profile page](https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png "profile page")
+## Back end Repositories
+visit [here](https://github.com/herzaparam/zwallet-api.git)
 
-## Deploy on Vercel
-Check out our [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/) for more details.
+## Contributor
+[Herza Paramayudhanto](https://github.com/herzaparam)
 
-## Colaborator
-Herza Paramayudhanto
+contact :
+herzaparam@gmail.com
 
-
-## Backend Repositories
-[https://github.com/herzaparam/zwallet-api.git](https://github.com/herzaparam/zwallet-api.git)
