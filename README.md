@@ -1,4 +1,6 @@
-
+<div align="center">
+  <img width="450" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/nextjslogo.png" alt="next.js logo">
+ </div> 
 <h1 align="center">Zwallet</h1>
 an e-wallet application, register with email verification then log in with an activated account. Each account has a balance so user should top up tha balance before user can transfer to other users. There are additional features such as editing username, phone-number, forgot password, reset password, search, sort, pagination and edit PIN. Developed with Next.js and React.js .
 
