@@ -56,11 +56,11 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
----
+
 ## Preview
 
 Here's some preview from my website :
-
+---
 <div align="center">
   <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png" alt="Home page">
   <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png" alt="History page">
