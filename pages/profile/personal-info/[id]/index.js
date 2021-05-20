@@ -24,8 +24,12 @@ export default function PersonalInfo({ user }) {
         }).then(async (result) => {
             if (result.isDenied) {
                 axiosApiInstance.put(`${api}users/del/phonenumber`)
-                await Swal.fire('phone number has been deleted!', 'please add your phone number!', '')
+                .then(()=>{
+                    setphoneInput(true)
+                    Swal.fire('phone number has been deleted!', 'please add your phone number!', '')
+                })
             }
+            
         })
     }
     const showInput = () => {
