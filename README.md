@@ -56,11 +56,11 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
----
+
 ## Preview
 
 Here's some preview from my website :
-
+---
 <div align="center">
   <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png" alt="Home page">
   <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png" alt="History page">
@@ -79,6 +79,6 @@ visit [here](https://github.com/herzaparam/zwallet-api.git)
 ## Contributor
 [Herza Paramayudhanto](https://github.com/herzaparam)
 
-contact :
-herzaparam@gmail.com
+### contact :
+If you want to contact me you can reach me at herzaparam@gmail.com
 
