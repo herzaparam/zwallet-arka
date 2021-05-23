@@ -5,7 +5,7 @@ import {useRouter} from 'next/router'
 
 function HomeTab() {
     const router = useRouter();
-    console.log();
+    
     const handleLogout = (e) =>{
         e.preventDefault();
         localStorage.removeItem('token');

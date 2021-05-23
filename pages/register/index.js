@@ -35,7 +35,6 @@ function SignUp() {
 
             })
             .catch((err) => {
-                console.log(err);
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
