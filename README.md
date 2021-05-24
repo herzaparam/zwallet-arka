@@ -62,11 +62,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Here's some preview from my website :
 ---
 <div align="center">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home.png" alt="Home page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history.png" alt="History page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation.png" alt="Transfer page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin.png" alt="Confirm tab">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/profile.png" alt="Edit Profile tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home(rescale).png" alt="Home page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history(rescale).png" alt="History page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation(rescale).png" alt="Transfer page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin(rescale).png" alt="Confirm tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transfer%20succes(rescale).png" alt="transfer succes tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/profile(rescale).png" alt="Edit Profile tab">
 </div>
 
 ---
