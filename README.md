@@ -1,7 +1,15 @@
 <div align="center">
-  <img width="350" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/nextjslogo.png" alt="next.js logo">
+  <img width="300" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/zwallet%20logo.png" alt="next.js logo">
  </div> 
-<h1 align="center">Zwallet</h1>
+<hr>
+ <div align="center">
+  <img width="100" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/nextjslogo.png" alt="next js">
+  <img width="100" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/reactlogo.png" alt="react js">
+  <img width="100" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/nodejs.png" alt="node js">
+  <img width="100" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/expresslogo.png" alt="express js">
+</div>
+<hr>
+<br>
 an e-wallet application, register with email verification then log in with an activated account. Each account has a balance so user should top up tha balance before user can transfer to other users. There are additional features such as editing username, phone-number, forgot password, reset password, search, sort, pagination and edit PIN. Developed with Next.js and React.js .
 
 ## Module and package
@@ -82,4 +90,6 @@ visit [here](https://github.com/herzaparam/zwallet-api.git)
 
 ### contact :
 If you want to contact me you can reach me at herzaparam@gmail.com
+
+
 
