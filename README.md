@@ -70,17 +70,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Here's some preview from my website :
 ---
 <div align="center">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/home(rescale).png" alt="Home page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history(rescale).png" alt="History page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transferconfirmation(rescale).png" alt="Transfer page">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/confirmpin(rescale).png" alt="Confirm tab">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transfer%20succes(rescale).png" alt="transfer succes tab">
-  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/profile(rescale).png" alt="Edit Profile tab">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/dashboard.png" alt="dashboard page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/change%20password.png" alt="change password">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/edit%20profile.png" alt="edit profile page">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/history%20page.png" alt="History">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/personal%20info.png" alt="personal info">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/select%20user.png" alt="select user">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transfer%20confirmation.png" alt="transfer confirmation">
+  <img width="400" src="https://github.com/herzaparam/zwallet-arka/blob/main/public/transfer%20detail.png" alt="transfer detail">
 </div>
 
 ---
 ## Publication
-you can visit our website here : [https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/](https://zwallet-arka-hx0errs9c-herzaparam.vercel.app/)
+you can visit our website here : [https://zwallet-arka.vercel.app/](https://zwallet-arka.vercel.app/)
 
 ## Back end Repositories
 visit [here](https://github.com/herzaparam/zwallet-api.git)
